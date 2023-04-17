@@ -1,0 +1,91 @@
+*
+	margin: 0
+	padding: 0
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	font-smoothing: antialiased
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	@include maxMobile
+		font-size: 15px
+
+html
+	-webkit-text-size-adjust: 100%
+
+body
+	margin: 0
+	font-smoothing: antialiased
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	font-family: $fontprincipal
+	overflow-x: hidden
+	max-width: 100%
+
+main
+	display: block
+	overflow-x: hidden
+
+:after,
+:before
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+h1, h2, h3, h4, h5, h6
+	font-family: $fonttitulos
+
+a
+	outline: 0!important
+	color: inherit
+	font-size: inherit
+	font-weight: inherit
+	text-decoration: none
+	span
+		color: inherit
+	&.o-btn
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
+		height: 50px
+		background-color: #ef6048
+		color: white
+		border: 0
+		margin: 0 auto
+		text-transform: uppercase
+		font-weight: 500
+		font-family: $fontprincipal
+		font-size: 17px
+		border-radius: 6px
+		text-align: center
+		letter-spacing: 1px
+		&.sm-btn
+			max-width: 160px
+		&.lg-btn
+			min-width: 300px
+			max-width: 320px
+		@include maxMobile
+			font-size: 14px
+
+img
+	&.img-full-responsive
+		display: block
+		margin: 0 auto
+		width: 100%
+	&.img-responsive
+		display: block
+		margin: 0 auto
+		max-width: 100%
+
+ul
+	li
+		list-style: none
+
+span
+	font-size: inherit
+	color: inherit
+
+strong
+	font-size: inherit
+	font-family: inherit

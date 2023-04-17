@@ -1,0 +1,283 @@
+.mainmenu
+
+  padding: 10px 0
+
+  // navigation
+  &--nav
+    display: flex
+    align-items: center
+
+  // logo
+  &--logo
+    width: 100%
+    max-width: 233px
+    display: block
+
+    @include tabletPortraitToDesktopSmall
+      max-width: 150px
+    @include phabletToTablet
+      max-width: 120px
+    @include maxPhablet
+      max-width: 150px
+
+    img
+      display: block
+      margin: 0 auto
+      max-width: 100%
+  // menu
+  &--firstlevel
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    @include minTabletPortrait
+      max-width: 850px
+      margin-left: auto      
+    @include tabletPortraitToDesktopSmall
+      max-width: 700px
+    @include phabletToTablet
+      max-width: 550px
+      margin-left: auto
+
+    @include maxPhablet
+      width: 40%
+      height: 100vh
+      right: 0
+      top: 0
+      z-index: 100
+      position: fixed
+      background-color: white
+      display: block
+      padding-top: 30px
+      border-left: 1px solid #ccc
+      overflow-y: scroll
+      overflow-x: hidden
+      padding-bottom: 30px
+      padding-top: 60px
+      display: none
+    
+    @include maxMobile
+      width: 60%
+    @include maxMobilePortrait
+      width: 100%
+
+    &.open-in-mobile
+      display: block
+
+  // &--firstlevel
+  &--firstlevel-li
+    width: 100%
+    text-align: center
+
+    @include maxPhablet
+      text-align: left
+      margin-bottom: 20px  
+      padding-left: 30px
+
+  &--firstlevel-a
+    text-align: center
+    text-transform: uppercase
+    font-size: 12px
+    font-weight: 600
+    letter-spacing: 0.1em
+    display: inline-block
+    &:hover
+      color: #ef6148
+
+    @include phabletToTablet
+      font-size: 10px
+
+
+  // solicitar cotizacion
+  &--cotizacion
+    a
+      display: block
+      background-color: #0a3e6b
+      border-color: #0a3e6b
+      border-radius: 8px
+      width: 180px
+      height: 40px
+      line-height: 40px
+      text-align: center
+      font-size: 12px
+      font-weight: 600
+      letter-spacing: 0.1em
+      color: white
+      text-transform: uppercase
+      @include phabletToTablet
+        width: 150px
+        font-size: 10px
+        height: 30px
+        line-height: 30px
+
+      @include maxPhablet
+        margin: 50px auto 0
+
+
+  // End first level
+  
+  // Second level
+  &--secondlevel
+    width: 100%
+    background-color: white
+    position: absolute
+    z-index: 100
+    bottom: 0
+    left: 0
+    transform: translateY(100%)
+    padding: 20px 30px 30px
+    text-align: left
+    display: none
+    flex-wrap: wrap
+    justify-content: space-between
+
+    @include maxPhablet
+      padding: 10px 0px
+      transform: none
+      position: relative
+      display: block
+      margin-left: 15px
+
+
+    &.show-menu
+      display: flex
+      @include maxPhablet
+        display: flex
+        position: relative
+        transform: unset
+
+  &--secondlevel-li
+    width: 100%
+    @include minTabletPortrait
+      margin-bottom: 20px
+      max-width: 18%
+    @include phabletToTablet
+      margin-bottom: 20px
+      max-width: 20%
+      padding: 0 5px
+
+  &--secondlevel-a
+    color: #0a3e6b
+    font-size: 16px
+    font-weight: 600
+    &:hover
+      text-decoration: underline
+
+    @include tabletPortraitToDesktopSmall
+      font-size: 13px
+    @include phabletToTablet
+      font-size: 12px
+    
+    @include maxPhablet
+      font-size: 13px
+  
+  // third level
+  &--thirdlevel
+    margin-top: 10px
+    @include maxPhablet
+      margin: 10px 0 20px
+  &--thirdlevel-li
+    margin-bottom: 5px
+    &:last-child
+      margin-bottom: 0
+  &--thirdlevel-a
+    display: block
+    font-size: 13px
+    min-height: 23px
+    line-height: 23px
+    padding-left: 10px
+    position: relative
+    background-color: white
+    transition: all .1s linear
+    @include tabletPortraitToDesktopSmall
+      font-size: 12px
+    @include phabletToTablet
+      font-size: 11px
+    @include maxPhablet
+      font-size: 11px
+    &:hover
+      background-color: #ededed
+    .triangle-bullet
+      display: inline-block
+      border-left: 3px solid black
+      border-top: 3px solid transparent
+      border-bottom: 3px solid transparent
+      position: absolute
+      left: 0
+      top: calc( 50% - 3px )
+    
+
+  // Boton abrir en mobile
+  &--openmenu
+    display: none
+
+    @include maxPhablet
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-flow: column
+      width: 50px
+      height: 50px
+      margin-left: auto
+      position: relative
+      z-index: 101
+      span
+        position: relative
+        display: block
+        width: 60%
+        height: 3px
+        background-color: #0a3e6b
+        margin: 0 auto
+        // &.middle-bar
+        //   animation-name: firstClose
+        //   animation-delay: .25s
+        //   animation-duration: 1s
+        //   animation-fill-mode: forwards
+        //   transition: linear
+        &.top-bar
+          top: -6px
+          // animation-delay: 0s
+          // animation-name: topMiddle
+          // animation-duration: .25s
+          // animation-fill-mode: forwards
+        &.bottom-bar
+          bottom: -6px
+          // animation-delay: 0s
+          // animation-name: bottomMiddle
+          // animation-duration: .25s
+          // animation-fill-mode: forwards
+        &.cross-bar
+          opacity: 0
+          top: -3px
+          // animation-name: secondClose
+          // animation-delay: .25s
+          // animation-duration: .5s
+          // animation-fill-mode: forwards
+// @keyframes topMiddle
+//   from
+//     top: -6px
+//   to
+//     top: 0
+
+// @keyframes bottomMiddle
+//   from
+//     bottom: -6px
+//   to
+//     bottom: 0
+
+// @keyframes firstClose
+//   0%
+//     transform: rotate(0deg)
+//   100%
+//     transform: rotate(-130deg)
+
+
+// @keyframes secondClose
+//   0%
+//     transform: rotate(0deg)
+//     opacity: 0
+//   100%
+//     transform: rotate(-45deg)
+//     opacity: 1
+
+

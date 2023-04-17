@@ -1,0 +1,24 @@
+script.
+  const headerFunctions = () => {
+    const MENU = document.querySelector('.mainmenu--firstlevel');
+    const MENUA = document.querySelectorAll('.mainmenu--firstlevel-a');
+    const SUBMENU = document.querySelectorAll('.mainmenu--secondlevel');
+    const OPENMOBILE = document.querySelector('.mainmenu--openmenu');
+    MENUA.forEach((enlace) => {
+      enlace.addEventListener('mouseover', () => {
+        SUBMENU.forEach((m) => m.classList.remove('show-menu'));
+        if (enlace.nextElementSibling != null) {
+          enlace.nextElementSibling.classList.add('show-menu');
+        }
+      });
+    });
+    SUBMENU.forEach((submenu) => {
+      submenu.addEventListener('mouseleave', () => {
+        submenu.classList.remove('show-menu');
+      });
+    });
+    OPENMOBILE.addEventListener('click', (m) => {
+      MENU.classList.toggle('open-in-mobile');
+    });
+  };
+  headerFunctions();

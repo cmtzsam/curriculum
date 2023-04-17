@@ -1,0 +1,24 @@
+{
+  "name": "curriculum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CAMS",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.29.1",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.21.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.62.0"
+  }
+}

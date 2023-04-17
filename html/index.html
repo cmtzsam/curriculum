@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificarlos</title>
+    <link rel="stylesheet" href="../css/mainstyle.css">
+  </head>
+  <body>
+    <header class="mainmenu">
+      <div class="o-container">
+        <nav class="mainmenu--nav"><a class="mainmenu--logo" href="#!"><img src="../images/logo-codificarlos-dark.png" alt="Codificarlos"></a>
+          <div class="mainmenu--openmenu"><span class="top-bar"></span><span class="middle-bar"></span><span class="bottom-bar"></span><span class="cross-bar"></span></div>
+          <ul class="mainmenu--firstlevel">
+            <li class="mainmenu--firstlevel-li"><a class="mainmenu--firstlevel-a" href="#!">Enlace de interes</a>
+              <ul class="mainmenu--secondlevel">
+                <li class="mainmenu--secondlevel-li"><a class="mainmenu--secondlevel-a" href="#!">Enlace Padre 1</a>
+                  <ol class="mainmenu--thirdlevel">
+                    <li class="mainmenu--thirdlevel-li"><a class="mainmenu--thirdlevel-a" href="#!"><span class="triangle-bullet"></span><span>Enlace hijo 1 </span></a></li>
+                    <li class="mainmenu--thirdlevel-li"><a class="mainmenu--thirdlevel-a" href="#!"><span class="triangle-bullet"></span><span>Enlace hijo 2 </span></a></li>
+                    <li class="mainmenu--thirdlevel-li"><a class="mainmenu--thirdlevel-a" href="#!"><span class="triangle-bullet"></span><span>Enlace hijo 3 </span></a></li>
+                  </ol>
+                </li>
+              </ul>
+            </li>
+            <li class="mainmenu--firstlevel-li"><a class="mainmenu--firstlevel-a" href="#!">Algo</a></li>
+            <li class="mainmenu--firstlevel-li"><a class="mainmenu--firstlevel-a" href="#!">Algo mas                    </a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+    </main>
+    <div class="mainfooter">
+      <div class="o-container">
+        <div class="mainfooter--grid">
+          <div class="mainfooter--logo"><img src="../images/logo-codificarlos-white.png" alt="Codificarlos"></div>
+          <div class="mainfooter--menu">
+            <h3>Enlaces de interes</h3>
+            <ul>
+              <li><a href="#!">Enlace 1</a></li>
+              <li><a href="#!">Enlace 2</a></li>
+              <li><a href="#!">Enlace 3</a></li>
+              <li><a href="#!">Enlace 4</a></li>
+            </ul>
+          </div>
+          <div class="mainfooter--menu"></div>
+        </div>
+        <div class="mainfooter--subfoot">
+          <div class="mainfooter--p">Codificarlos S.A. de C.V. 2023 Todos los derechos reservados. <a href="#!" target="_blank">Aviso de Privacidad</a> </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const headerFunctions = () => {
+        const MENU = document.querySelector('.mainmenu--firstlevel');
+        const MENUA = document.querySelectorAll('.mainmenu--firstlevel-a');
+        const SUBMENU = document.querySelectorAll('.mainmenu--secondlevel');
+        const OPENMOBILE = document.querySelector('.mainmenu--openmenu');
+        MENUA.forEach((enlace) => {
+          enlace.addEventListener('mouseover', () => {
+            SUBMENU.forEach((m) => m.classList.remove('show-menu'));
+            if (enlace.nextElementSibling != null) {
+              enlace.nextElementSibling.classList.add('show-menu');
+            }
+          });
+        });
+        SUBMENU.forEach((submenu) => {
+          submenu.addEventListener('mouseleave', () => {
+            submenu.classList.remove('show-menu');
+          });
+        });
+        OPENMOBILE.addEventListener('click', (m) => {
+          MENU.classList.toggle('open-in-mobile');
+        });
+      };
+      headerFunctions();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+.mainfooter
+  background-color: #0a3e6b
+  padding: 50px 0 0
+
+  @include maxMobile
+    padding: 30px 20px 0
+
+  &--grid
+    display: flex
+    justify-content: space-between
+
+    @include maxMobile
+      display: block
+
+  &--logo
+    width: 100%
+    max-width: 155px
+
+    @include maxMobile
+      margin: 0 0 30px
+
+    img
+      display: block
+      max-width: 100%
+      margin: 0 auto
+  
+  &--menu
+    width: 100%
+    max-width: 25%
+    @include maxMobile
+      max-width: 100%
+      margin: 0 0 30px
+      &:last-child
+        margin-bottom: 0
+    h3
+      color: white
+      font-size: 16px
+      font-weight: 700
+      margin: 0 0 15px
+    ul
+      li
+        font-size: 14px
+        margin: 0 0 7px
+        &:last-child
+          margin-bottom: 0
+        a
+          position: relative
+          font-size: inherit
+          color: white
+          opacity: .7
+          left: 0
+          transition: all .1s linear
+          &:hover
+            opacity: 1
+            left: 3px
+            text-decoration: underline
+
+
+  &--subfoot
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    padding: 100px 0 30px
+    
+    @include maxMobile
+      display: block
+      padding: 50px 0 25px
+  
+  &--p
+    width: 100%
+    margin-right: auto
+    font-size: 12px
+    color: white
+    color: rgba( 255, 255, 255, 0.7)
+
+    @include maxMobile
+      width: 100%
+      text-align: center
+      line-height: 1.75
+      a
+        display: block
+        text-decoration: underline
+        margin: 5px 0 0
+
+    a
+      transition: all .1s linear
+      &:hover
+        color: white
+        text-decoration: underline
+
+
+  &--social
+    display: flex
+    justify-content: flex-end
+    width: 100%
+    max-width: 200px
+
+    @include maxMobile
+      margin-top: 50px
+      max-width: 100%
+      justify-content: center
+
+    a
+      display: block
+      margin: 0 10px
+      background: red
+      img
+        display: block
+        width: 15px

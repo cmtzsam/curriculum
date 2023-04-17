@@ -1,0 +1,161 @@
+$fontprincipal: 'Inter'
+$fonttitulos: 'Fira Code', sans-serif
+$container-width: 1400px
+$font-size-body: 15px
+
+// Media queries
+// 1440
+$desktop: $container-width
+$desktop-small: 1140px
+$tablet-landscape: 1024px
+$tablet-portrait: 960px
+$tablet: 768px
+$phablet: 740px
+$mobile: 568px
+$mobile-landscape: 480px
+$mobile-portrait: 380px
+
+// min desktopBig
+@mixin minDesktopSize
+	@media ( min-width: $desktop)
+		@content
+
+// min 1140
+@mixin minDesktopSmall
+	@media ( min-width: $desktop-small)
+		@content
+// max 1140
+@mixin maxDesktopSmall
+	@media ( max-width: $desktop-small )
+		@content
+// 1140 - desktop
+@mixin desktopSmallToBig
+	@media (min-width: $desktop-small ) and ( max-width: $desktop )
+		@content
+// 1024 - 1140
+@mixin tabletLandscapeDesktop
+	@media (min-width: $tablet-landscape ) and ( max-width: $desktop-small )
+		@content
+// max 1024
+@mixin maxTabletLandscape
+	@media (max-width: $tablet-landscape )
+		@content
+// min 1024
+@mixin minTabletLandscape
+	@media (min-width: $tablet-landscape )
+		@content
+// 960 - 1140
+@mixin tabletPortraitToDesktopSmall
+	@media ( min-width: $tablet-portrait ) and ( max-width: $desktop-small )
+		@content
+// min 960
+@mixin minTabletPortrait
+	@media ( min-width: $tablet-portrait )
+		@content
+// max 960
+@mixin maxTabletPortrait
+	@media ( max-width: $tablet-portrait )
+		@content
+// min 740 - desktop
+@mixin phabletToDesktop
+	@media ( min-width: $phablet ) and ( max-width: $desktop )
+		@content
+// min 740 - 1140
+@mixin phabletToDesktopSmall
+	@media ( min-width: $phablet ) and ( max-width: $desktop-small )
+		@content
+// min 740 - 960
+@mixin phabletToTablet
+	@media ( min-width: $phablet ) and ( max-width: $tablet-portrait )
+		@content
+// 568 - 960
+@mixin mobileToPortrait
+	@media ( min-width: $mobile ) and ( max-width: $tablet-portrait )
+		@content
+// 568 - 740
+@mixin mobileToPhablet
+	@media ( min-width: $mobile ) and ( max-width: $phablet )
+		@content
+// 740
+@mixin maxPhablet
+	@media ( max-width: $phablet )
+		@content
+// max 568
+@mixin maxMobile
+	@media ( max-width: $mobile )
+		@content
+// min 568
+@mixin minMobile
+	@media ( min-width: $mobile )
+		@content
+// 480 - 568
+@mixin mobileLandscapeToMobile
+	@media (min-width: $mobile-landscape) and (max-width: $mobile )
+		@content
+// max 480
+@mixin maxMobileLandscape
+	@media (max-width: $mobile-landscape)
+		@content
+// min 380 max 568
+@mixin mobilePortraitToMobile
+	@media (min-width: $mobile-portrait) and (max-width: $mobile)
+		@content
+// max 380
+@mixin maxMobilePortrait
+	@media (max-width: $mobile-portrait)
+		@content
+
+// Mixins
+@mixin flexTopLeft
+	display: flex
+	align-items: flex-start
+	justify-content: flex-start
+
+@mixin flexStrech
+	display: flex
+	align-items: stretch
+
+@mixin flexStart
+	display: flex
+	align-items: flex-start
+	justify-content: flex-start
+
+@mixin flexEnd
+	display: flex
+	align-items: center
+	justify-content: flex-end
+
+@mixin flexEndColumnReverse
+	display: flex
+	align-items: flex-end
+	justify-content: flex-end
+	flex-flow: column-reverse
+
+@mixin flexCenter
+	display: flex
+	align-items: center
+	justify-content: center
+
+@mixin flexAround
+	display: flex
+	align-items: center
+	justify-content: space-around
+
+@mixin flexBetween
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+@mixin flexEvenly
+	display: flex
+	align-items: center
+	justify-content: space-evenly
+
+@mixin flexColumnSpaceBetween
+	display: flex
+	flex-flow: column
+	justify-content: space-between
+
+@mixin flexRowReverse
+	display: flex
+	flex-flow: row-reverse

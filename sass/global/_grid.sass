@@ -1,0 +1,82 @@
+.o-container
+	width: 95%
+	max-width: $container-width
+	display: block
+	margin: 0 auto
+	position: relative
+	&::before,
+	&::after
+		display: table
+		content: ""
+		clear: both
+	&-fluid
+		width: 100%
+		display: block
+		margin: 0 auto
+		position: relative
+		.o-grid-row
+			.col
+				padding: 0
+
+.o-grid-row
+	display: flex
+	flex-wrap: wrap
+	width: 100%
+	&.no-padding
+		.col
+			padding: 0
+	&.row-stretch
+		@include flexStrech
+	&.row-end
+		@include flexEnd
+	&.row-center
+		@include flexCenter
+	&.row-reverse
+		@include flexRowReverse
+	&.row-start
+		@include flexStart
+	.col
+		width: auto
+		padding: 0 10px
+		&.size-12
+			width: 100%
+		&.size-11
+			width: 91.66666667%
+		&.size-10
+			width: 83.33333333%
+		&.size-9
+			width: 75%
+		&.size-8
+			width: 66.66666667%
+		&.size-7
+			width: 58.33333333%
+		&.size-6
+			width: 50%
+		&.size-5
+			width: 41.66666667%
+		&.size-4
+			width: 33.33333333%
+		&.size-3
+			width: 25%
+		&.size-2
+			width: 16.66666667%
+		&.size-1
+			width: 8.33333333%
+
+
+@include maxPhablet
+	.o-grid-row
+		.col
+			&.size-sm-6
+				width: 50%
+			&.size-sm-12
+				width: 100%
+@include maxMobile
+	.o-grid-row
+		.col
+			&.size-xs-6
+				width: 50%
+				padding: 0 0
+			&.size-xs-12
+				width: 100%
+				padding: 0 0

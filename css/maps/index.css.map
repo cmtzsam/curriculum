@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.sass","index.css"],"names":[],"mappings":"AAAA;EACE,aAAA;ACCF","file":"../index.css","sourcesContent":["body\r\n  display: grid","body {\n  display: grid;\n}"]}
